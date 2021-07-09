@@ -1,7 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default {
-  name: "category",
-  title: "Category",
+  name: "artPiece",
+  title: "Art Piece",
   type: "document",
   fields: [
     {
@@ -19,20 +19,25 @@ export default {
       },
     },
     {
-      name: "description",
-      title: "Description",
-      type: "text",
-    },
-    {
-      name: "parents",
-      title: "Parent categories",
+      name: "images",
+      title: "Images",
       type: "array",
       of: [
         {
-          type: "reference",
-          to: [{ type: "category" }],
+          type: "image",
+          options: {
+            hotspot: true,
+          },
         },
       ],
     },
   ],
+
+  preview: {
+    select: {
+      title: "title",
+      manufactor: "manufactor.title",
+      media: "defaultProductVariant.images[0]",
+    },
+  },
 };
