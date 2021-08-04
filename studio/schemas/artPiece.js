@@ -19,25 +19,9 @@ export default {
       },
     },
     {
-      name: "images",
-      title: "Images",
-      type: "array",
-      of: [
-        {
-          type: "image",
-          options: {
-            hotspot: true,
-          },
-        },
-      ],
+      name: "image",
+      title: "Image",
+      type: "image",
     },
   ],
-
-  preview: {
-    select: {
-      title: "title",
-      manufactor: "manufactor.title",
-      media: "defaultProductVariant.images[0]",
-    },
-  },
 };

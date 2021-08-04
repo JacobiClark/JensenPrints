@@ -28,7 +28,7 @@ const Header = (props) => {
       wrap="wrap"
       w="100%"
     >
-      <Box w="200px">
+      <Box>
         <Text fontSize="lg" fontWeight="bold">
           Tanner Jensen Art
         </Text>
