@@ -15,7 +15,8 @@
     "@sanity/desk-tool",
     "barcode-input",
     "@sanity/dashboard",
-    "dashboard-widget-netlify"
+    "dashboard-widget-netlify",
+    "@sanity/vision"
   ],
   "env": {
     "development": {

@@ -5,17 +5,11 @@ export default {
   type: "document",
   fields: [
     {
-      name: "title",
-      title: "Title",
+      name: "artType",
+      title: "Art Type",
       type: "string",
-    },
-    {
-      name: "slug",
-      title: "Slug",
-      type: "slug",
       options: {
-        source: "title",
-        maxLength: 96,
+        list: ["Comic", "InkIllustration"],
       },
     },
     {

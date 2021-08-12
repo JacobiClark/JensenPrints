@@ -49,8 +49,10 @@ const Header = (props) => {
           pt={[4, 4, 0, 0]}
         >
           <MenuItem to="/">Home</MenuItem>
-          <MenuItem to="/ink">Ink</MenuItem>
-          <MenuItem to="/waterColor">Water Colors</MenuItem>
+          <MenuItem to="/imageGallery/InkIllustration">
+            Ink Illustrations
+          </MenuItem>
+          <MenuItem to="/imageGallery/Comic">Comics</MenuItem>
           <MenuItem to="/pictures" isLast>
             Pictures
           </MenuItem>
