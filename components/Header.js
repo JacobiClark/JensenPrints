@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Flex, Box, Text } from "@chakra-ui/react";
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
-import Link from "next/Link";
+import Link from "next/link";
 
 const MenuItem = ({ children, isLast, to = "/" }) => {
   return (
