@@ -1,6 +1,7 @@
 import sanityClient from "../../lib/client";
 import { Box, Flex } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
+import GalleryLayout from "../../components/GalleryLayout";
 
 export const getStaticPaths = async () => {
   const galleries = ["Comic", "InkIllustration"];
@@ -9,7 +10,6 @@ export const getStaticPaths = async () => {
       params: { galleryType: galleryType },
     };
   });
-  console.log(paths);
 
   return {
     paths,
@@ -19,16 +19,13 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const id = context.params.galleryType;
-  console.log(id);
   const query = `
     *[_type == "artPiece" && artType == '${id}']{
       "imageUrl": image.asset->url
     }
     | order(_createdAt asc)
   `;
-  console.log(query);
   const images = await sanityClient.fetch(query);
-  console.log(images);
   return {
     props: { images: images },
   };
@@ -45,25 +42,7 @@ export const getStaticProps = async (context) => {
 }*/
 
 const gallery = ({ images }) => {
-  return (
-    <Flex
-      direction="row"
-      wrap="wrap"
-      justifyContent="space-evenly"
-      alignItems="center"
-    >
-      {images.map((artPiece) => (
-        <Box key={artPiece.title} w="40%" mt="2%" mb="2%">
-          <Image
-            key={artPiece.title}
-            src={artPiece.imageUrl}
-            alt={artPiece.title}
-            width="100%"
-          />
-        </Box>
-      ))}
-    </Flex>
-  );
+  return <GalleryLayout images={images} />;
 };
 
 export default gallery;
