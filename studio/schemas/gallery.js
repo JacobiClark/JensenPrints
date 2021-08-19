@@ -10,8 +10,13 @@
   type: "document",
   fields: [
     {
-      name: "gallery",
-      title: "Images gallery",
+      title: "Gallery Name",
+      name: "galleryName",
+      type: "string",
+    },
+    {
+      name: "images",
+      title: "Images",
       type: "array",
       of: [{ type: "image" }],
     },

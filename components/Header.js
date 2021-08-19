@@ -20,8 +20,7 @@ const Header = (props) => {
   const toggleMenu = () => setShow(!show);
   return (
     <Flex
-      mb={8}
-      p={8}
+      p={6}
       as="nav"
       align="center"
       justify="space-between"
@@ -53,8 +52,8 @@ const Header = (props) => {
             Ink Illustrations
           </MenuItem>
           <MenuItem to="/imageGallery/Comic">Comics</MenuItem>
-          <MenuItem to="/pictures" isLast>
-            Pictures
+          <MenuItem to="/storyboards" isLast>
+            Storyboards
           </MenuItem>
         </Flex>
       </Box>

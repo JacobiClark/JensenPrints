@@ -4,8 +4,6 @@ import { Image } from "@chakra-ui/react";
 const GalleryLayout = (images) => {
   return (
     <Box>
-      <Center>Browse by Artwork StyleLatest Features</Center>
-      <Flex direction="row" justifyContent="space-between"></Flex>
       <Flex
         direction="row"
         wrap="wrap"
@@ -13,7 +11,7 @@ const GalleryLayout = (images) => {
         alignItems="flex-start"
       >
         {images.images.map((artPiece) => (
-          <Box key={artPiece.title} w="45%" mt="2%" mb="2%">
+          <Box key={artPiece.imageUrl} w={["90%", "45%"]} mt="2%" mb="2%">
             <Image
               key={artPiece.title}
               src={artPiece.imageUrl}
