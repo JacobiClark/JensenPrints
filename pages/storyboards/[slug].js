@@ -4,7 +4,7 @@ import { Image } from "@chakra-ui/react";
 import StoryBoardLayout from "../../components/StoryboardLayout";
 
 export const getStaticPaths = async () => {
-  const storyboards = ["Soar"];
+  const storyboards = ["Soar", "NightDrive"];
   const paths = storyboards.map((slug) => {
     return {
       params: { slug: slug },
@@ -19,8 +19,9 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const slug = context.params.slug;
+  console.log(slug);
   const query = `
-    *[_type == "imageGallery" && galleryName == 'Soar'] {
+    *[_type == "imageGallery" && galleryName == '${slug}'] {
       "images": images[].asset->url
     }
   `;
@@ -31,7 +32,6 @@ export const getStaticProps = async (context) => {
 };
 
 const storyboardGallery = ({ images }) => {
-  console.log(images[0].images);
   return <StoryBoardLayout images={images} />;
 };
 

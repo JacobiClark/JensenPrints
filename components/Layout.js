@@ -5,7 +5,7 @@ const Layout = ({ children }) => {
   return (
     <div className="content">
       <Header />
-      <Container maxW="container.lg" p="2%">
+      <Container maxW="container.xl" p="2%">
         {children}
       </Container>
     </div>

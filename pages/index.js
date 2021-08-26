@@ -15,7 +15,7 @@ export default function Home({ allArtPieces }) {
 
 export async function getStaticProps(context) {
   const query = `
-    *[_type == "artPiece"] | order(_createdAt desc) [0..9] {
+    *[_type == "artPiece"] | order(_createdAt desc) {
       "imageUrl": image.asset->url
     }
   `;

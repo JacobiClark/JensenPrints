@@ -7,11 +7,11 @@ const GalleryLayout = (images) => {
       <Flex
         direction="row"
         wrap="wrap"
-        justifyContent="space-evenly"
+        justifyContent={["space-around", "space-between"]}
         alignItems="flex-start"
       >
         {images.images.map((artPiece) => (
-          <Box key={artPiece.imageUrl} w={["90%", "45%"]} mt="2%" mb="2%">
+          <Box key={artPiece.imageUrl} w={["90%", "30%"]} mt="2%" mb="2%">
             <Image
               key={artPiece.title}
               src={artPiece.imageUrl}

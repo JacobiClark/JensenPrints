@@ -8,11 +8,11 @@ const StoryboardLayout = (images) => {
       <Flex
         direction="row"
         wrap="wrap"
-        justifyContent="space-evenly"
+        justifyContent={["space-around", "space-between"]}
         alignItems="flex-start"
       >
         {images.images[0].images.map((image) => (
-          <Box key={image} w="48%" mt="1%" mb="1%">
+          <Box key={image} w={["50%", "48%"]} mt="1%" mb="1%">
             <Image key={image} src={image} alt={image} width="100%" />
           </Box>
         ))}

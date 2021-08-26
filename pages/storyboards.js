@@ -15,7 +15,7 @@ export default function Home({ storyBoardCoverImages }) {
       {storyBoardCoverImages.map((coverImage) => {
         return (
           <Link
-            href={"/storyboards/" + coverImage[0].galleryName}
+            href={"/storyboards/" + coverImage[0].slug}
             passHref={true}
             key={coverImage[0].galleryName}
           >
@@ -27,7 +27,7 @@ export default function Home({ storyBoardCoverImages }) {
               mb="2%"
             >
               <Center>
-                <Text>{coverImage[0].galleryName}</Text>
+                <Text fontSize="3xl">{coverImage[0].galleryName}</Text>
               </Center>
               <Image
                 key={coverImage[0].imageUrl}
@@ -56,7 +56,7 @@ export async function getStaticProps(context) {
   const soarCoverImage = await sanityClient.fetch(soarCoverImageQuery);
 
   const nightDriveCoverImageQuery = `
-    *[_type == "imageGallery" && galleryName == "Night Drive"]
+    *[_type == "imageGallery" && galleryName == "NightDrive"]
       {
         "galleryName" : galleryName,
         "imageUrl" : images[0].asset->url,
