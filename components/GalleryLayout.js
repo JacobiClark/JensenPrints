@@ -15,7 +15,7 @@ const GalleryLayout = (images) => {
             <Image
               key={artPiece.title}
               src={artPiece.imageUrl}
-              alt={artPiece.title}
+              alt={""}
               width="100%"
             />
           </Box>
