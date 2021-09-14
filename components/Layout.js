@@ -3,7 +3,7 @@ import { Container } from "@chakra-ui/react";
 
 const Layout = ({ children }) => {
   return (
-    <div className="content">
+    <div>
       <Header />
       <Container maxW="container.xl" p="2%">
         {children}
